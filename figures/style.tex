@@ -1,0 +1,27 @@
+% Shared preamble for the standalone figures.
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.9]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{ink}{RGB}{28,28,30}
+\definecolor{rule}{RGB}{95,97,104}
+\definecolor{muted}{RGB}{112,114,121}
+\definecolor{accent}{RGB}{172,56,44}
+\definecolor{probfill}{RGB}{250,244,235}
+\definecolor{detfill}{RGB}{239,243,247}
+
+\newcommand{\zone}[1]{{\fontsize{6.6}{8}\selectfont\bfseries #1}}
+\newcommand{\sub}[1]{{\fontsize{7.2}{9}\selectfont\color{muted}#1}}
+\newcommand{\mono}[1]{{\fontencoding{OT1}\fontfamily{cmtt}\selectfont #1}}
+
+\tikzset{
+  every picture/.style={font=\fontsize{8}{10}\selectfont, text=ink,
+    >={Stealth[length=4.6pt,width=3.8pt]}},
+  box/.style={draw=rule, line width=0.5pt, rounded corners=2pt, fill=white,
+    minimum height=8mm, minimum width=16mm, inner sep=2pt, align=center},
+  flow/.style={->, draw=rule, line width=0.6pt},
+  hot/.style={->, draw=accent, line width=0.9pt},
+  lbl/.style={font=\fontsize{7.2}{9}\selectfont, text=muted, inner sep=1.5pt},
+}

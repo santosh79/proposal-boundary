@@ -1,0 +1,35 @@
+\documentclass[border=3pt]{standalone}
+\input{style}
+\begin{document}
+\begin{tikzpicture}
+\tikzset{
+  panel/.style={draw=rule, line width=0.5pt, rounded corners=2pt, fill=white,
+    text width=40mm, minimum height=19mm, inner sep=5pt, align=left,
+    font=\fontsize{7.6}{10.4}\selectfont},
+  head/.style={font=\fontsize{6.6}{8}\selectfont\bfseries, anchor=south west, inner sep=0pt},
+  k/.style={},
+}
+\node[panel, fill=probfill] (a) at (0,0) {%
+  \textcolor{muted}{operation 2}\ \ run the test command\\[1pt]
+  \textcolor{muted}{claim}\ \ ``the test suite passes''\\[1pt]
+  \textcolor{muted}{evidence}\ \ result of operation 2:\\
+  \hspace*{3.1em}exit status = 0};
+\node[panel, fill=detfill] (b) at (5.2,0) {%
+  performs operation 2\\[1pt]
+  \textcolor{muted}{observes}\ \ exit status 1\\[1pt]
+  \textcolor{muted}{evaluates}\ \ exit status = 0?\ \ no\\
+  \mbox{}};
+\node[panel, fill=detfill] (c) at (10.4,0) {%
+  \textbf{\textcolor{accent}{claim not verified}}\\[1pt]
+  \textcolor{muted}{observed}\ \ exit status 1\\[1pt]
+  \textcolor{muted}{expected}\ \ exit status 0\\[1pt]
+  later operations not applied};
+
+\node[head] at ($(a.north west)+(0,0.12)$) {IN THE PROPOSAL \textcolor{muted}{\mdseries\ written by the agent}};
+\node[head] at ($(b.north west)+(0,0.12)$) {AT APPLICATION \textcolor{muted}{\mdseries\ done by the runtime}};
+\node[head] at ($(c.north west)+(0,0.12)$) {IN THE HISTORY \textcolor{muted}{\mdseries\ recorded by the runtime}};
+
+\draw[flow] (a) -- (b);
+\draw[flow] (b) -- (c);
+\end{tikzpicture}
+\end{document}

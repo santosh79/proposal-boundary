@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you refer to this note, please cite it as below."
+title: "The Proposal Boundary"
+authors:
+  - family-names: Kumar
+    given-names: Santosh
+version: "0.1"
+date-released: 2026-10-01
+preferred-citation:
+  type: report
+  title: "The Proposal Boundary: Constraining the Interface Between Probabilistic Reasoning and Consequential Execution"
+  authors:
+    - family-names: Kumar
+      given-names: Santosh
+  year: 2026
+  month: 10
+  version: "0.1"
